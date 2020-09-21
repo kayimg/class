@@ -94,12 +94,23 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 }
 
 /* #gnb */
-#gnb{display: none;opacity: 0;position: fixed;top: 150px;right: 0;width: 100%;height: 100%;background: gray;}
+#gnb{display: none;opacity: 0;position: fixed;top: 150px;right: 0;width: 100%;height: 100%;
+    /* background: gray */; z-index: 910;}
 #gnb > ul{position: absolute;top: 200px;right: 0;width: 1220px;border: 1px solid #000;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-end;align-items: stretch;}
 #gnb > ul > li{width: 400px;padding: 0 40px 80px 0;-webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;box-sizing: border-box;}
-#gnb>ul>li:nth-child(odd){background: red;}
-#gnb>ul>li:nth-child(even){background: blue;}
+/* #gnb>ul>li:nth-child(odd){background: red;}
+#gnb>ul>li:nth-child(even){background: blue;} */
+
+#gnb > ul > li > a{display: block;;font-family: HDhB;font-size: 28px;margin-bottom: 38px;}
+#gnb ul li ul li + li{margin-top: 20px;}
+#gnb ul li ul li a{font-size: 18px;color: #b4b4b4;}
+#gnb ul li ul li a:hover, #gnb ul li ul li a:focus{color: #fff;}
+
+/* #gnb 배경 색상 처리 .gnb_circle */
+.gnb_circle{position: fixed;top: 45px;right: 275px;width: 1px;height: 1px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;background: #24292d;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+#gnb.active + .gnb_circle{top: -780px;right: -270px;width: 1680px;height: 1680px;}
+
 
 .util .btn_reserve{width: 180px;height: 50px;line-height: 50px;background: #fff;color: #222222;text-align: center;-webkit-border-radius: 60px;-moz-border-radius: 60px;border-radius: 60px;}
 .util .btn_reserve:hover, .util .btn_reserve:focus{
@@ -109,4 +120,5 @@ background: -webkit-linear-gradient(left,  #ff8933 0%,#ea2e2e 100%); /* Chrome10
 background: linear-gradient(to right,  #ff8933 0%,#ea2e2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8933', endColorstr='#ea2e2e',GradientType=1 ); /* IE6-9 */
 }
+
 /* #footer */
