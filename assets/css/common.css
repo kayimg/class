@@ -92,6 +92,14 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 }
 
 /* #gnb */
-#gnb{display: none;}
+#gnb{display: none;opacity: 0;}
 
+.util .btn_reserve{width: 180px;height: 50px;line-height: 50px;background: #fff;color: #222222;text-align: center;-webkit-border-radius: 60px;-moz-border-radius: 60px;border-radius: 60px;}
+.util .btn_reserve:hover, .util .btn_reserve:focus{
+background: #ff8933; /* Old browsers */
+background: -moz-linear-gradient(left,  #ff8933 0%, #ea2e2e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #ff8933 0%,#ea2e2e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #ff8933 0%,#ea2e2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8933', endColorstr='#ea2e2e',GradientType=1 ); /* IE6-9 */
+}
 /* #footer */
