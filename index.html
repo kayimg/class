@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/common.js"></script>
-  </head>
+</head>
 </head>
 
 <body>
@@ -101,7 +101,62 @@
     </header>
 
     <div id="container">
-        <section id="cnt1"></section>
+        <!-- swiper 슬라이더, https://swiperjs.com/get-started/
+            1) swiper-bundle.css, swiper-bundle.min.js을 다운받아 작업 폴더에 넣기
+            2) div.swiper-container로 마크업
+            3) 스크립트를 호출하기 위해
+            var mySwiper = new Swiper('.swiper-container', {
+                필요한 옵션 추가
+            });
+            4) 변경하려는 스타일 작성      
+        -->
+        <section id="cnt1">
+            <!-- 슬라이더 컨텐츠 시작 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper"><!-- 슬라이더 상세 내용 그룹 -->
+                    <div class="swiper-slide slide1">
+                        <div class="txt">
+                          <strong>HMG 드라이빙 익스피리언스</strong>
+                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide2">
+                        <div class="txt">
+                          <strong>HMG 드라이빙 익스피리언스</strong>
+                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide3">
+                        <div class="txt">
+                          <strong>HMG 드라이빙 익스피리언스</strong>
+                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide4">
+                        <div class="txt">
+                          <strong>HMG 드라이빙 익스피리언스</strong>
+                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide slide5">
+                        <div class="txt">
+                          <strong>HMG 드라이빙 익스피리언스</strong>
+                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                      </div>
+                    </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
         <section id="cnt2"></section>
         <section id="cnt3"></section>
         <section id="cnt4"></section>
