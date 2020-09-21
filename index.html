@@ -113,47 +113,58 @@
         <section id="cnt1">
             <!-- 슬라이더 컨텐츠 시작 -->
             <div class="swiper-container">
-                <div class="swiper-wrapper"><!-- 슬라이더 상세 내용 그룹 -->
+                <div class="swiper-wrapper">
+                    <!-- 슬라이더 상세 내용 그룹 -->
                     <div class="swiper-slide slide1">
                         <div class="txt">
-                          <strong>HMG 드라이빙 익스피리언스</strong>
-                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                            <strong>HMG 드라이빙 익스피리언스</strong>
+                            <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
                         </div>
-                      </div>
-                      <div class="swiper-slide slide2">
-                        <div class="txt">
-                          <strong>HMG 드라이빙 익스피리언스</strong>
-                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide slide3">
-                        <div class="txt">
-                          <strong>HMG 드라이빙 익스피리언스</strong>
-                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide slide4">
-                        <div class="txt">
-                          <strong>HMG 드라이빙 익스피리언스</strong>
-                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide slide5">
-                        <div class="txt">
-                          <strong>HMG 드라이빙 익스피리언스</strong>
-                          <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
-                        </div>
-                      </div>
                     </div>
-                <!-- If we need pagination -->
+                    <video src="" id="mainVideo" autoplay muted playsinline loop>
+                        <source src="assets/video/hmg-main-visual-movie-001.mp4" type="video/mp4">
+                        <source src="assets/video/hmg-main-visual-movie-001.webm" type="video/webm">
+                        <source src="assets/video/hmg-main-visual-movie-001.ogg" type="video/ogg">
+                    </video>
+                    <div class="swiper-slide slide2">
+                        <div class="txt">
+                            <strong>HMG 드라이빙 익스피리언스</strong>
+                            <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <div class="txt">
+                            <strong>HMG 드라이빙 익스피리언스</strong>
+                            <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <div class="txt">
+                            <strong>HMG 드라이빙 익스피리언스</strong>
+                            <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <div class="txt">
+                            <strong>HMG 드라이빙 익스피리언스</strong>
+                            <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination :fraction 1/5 -->
                 <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev prev_next"></div>
+                <div class="swiper-button-next prev_next"></div>
 
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
+                <!-- play, stop 버튼 추가하기 -->
+                <button class="autoPlay play_stop" title="재생">
+                    <span class="blind-b">재생</span>
+                </button>
+                <button class="autoStop play_stop" title="일시정지">
+                    <span class="blind-b">일시정지</span>
+                </button>
             </div>
         </section>
 
