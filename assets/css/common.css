@@ -55,11 +55,11 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 #skip a:focus{left: 0;width: 100%;height: 90px;line-height: 90px;text-align: center;background: #808080;color: #ffffff;font-size: 22px;}
 
 /* #header */
-#header{position: fixed;top: 0;left: 0;background: red;color: #ffffff;
+#header{position: fixed;top: 0;left: 0;color: #ffffff;
     width: calc(100% - 160px);padding: 0 80px;-webkit-transition: background 0.5s;-moz-transition: background 0.5s;-o-transition: background 0.5s;transition: background 0.5s;z-index: 900;}
 #header.bgchange{background: #000000;}
 .logo{padding-top: 25px;z-index: 920;}
-.util{margin-top: 20px;display: flex;align-items: center;height: 50px;background: gray;}/* flex-direction: row;flex-wrap: nowrap;justify-content: flex-start;기본값이어서 생략함 */
+.util{margin-top: 20px;display: flex;align-items: center;height: 50px;}/* flex-direction: row;flex-wrap: nowrap;justify-content: flex-start;기본값이어서 생략함 */
 .util > a:nth-child(1){margin: 0 10px;}
 .util > a:nth-child(2), .util > a:nth-child(3){margin: 0 20px;}
 .util > a{position: relative;z-index: 920;font-family: HDhB;font-size: 18px;}
@@ -72,7 +72,9 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 .btn_all .motion .span_box{top: 0;left: 24px;width: 74px;height: 2px;}
 .btn_all:hover .motion .span_box{-webkit-animation: dashMove 2s linear infinite;-moz-animation: dashMove 2s linear infinite;-o-animation: dashMove 2s linear infinite;animation: dashMove 2s linear infinite;}
 /* close버튼에 오버하는 경우 애니메이션 제거 */
+.btn_all.close:hover .motion .span_box{-webkit-animation: none;-moz-animation: none;-o-animation: none;animation: none;}
 .btn_all .motion .span_box span{float: left;width: 6px;height: 2px;background: #f00;margin: 0 1px;}
+
 
 @-webkit-keyframes dashMove{
     0%{left: 24px;}
@@ -92,7 +94,12 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 }
 
 /* #gnb */
-#gnb{display: none;opacity: 0;}
+#gnb{display: none;opacity: 0;position: fixed;top: 150px;right: 0;width: 100%;height: 100%;background: gray;}
+#gnb > ul{position: absolute;top: 200px;right: 0;width: 1220px;border: 1px solid #000;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-end;align-items: stretch;}
+#gnb > ul > li{width: 400px;padding: 0 40px 80px 0;-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;box-sizing: border-box;}
+#gnb>ul>li:nth-child(odd){background: red;}
+#gnb>ul>li:nth-child(even){background: blue;}
 
 .util .btn_reserve{width: 180px;height: 50px;line-height: 50px;background: #fff;color: #222222;text-align: center;-webkit-border-radius: 60px;-moz-border-radius: 60px;border-radius: 60px;}
 .util .btn_reserve:hover, .util .btn_reserve:focus{
