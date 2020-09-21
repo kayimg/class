@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HMG 드라이빙 익스피리언스</title>
+    <!-- 파비콘 : 타이틀 옆 아이콘, .ico파일 -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!-- 반복영역 건너뛰기 -->
+    <div id="skip">
+        <a href="#container">본문 바로가기</a>
+    </div>
+
+    <header id="header">
+        <!-- .bgchange를 가지면 배경 검정색 변경하기 -->
+        <h1 class="logo f_l">
+            <a href=""><img src="assets/images/common/logo-wht.png" alt="HMG 드라이빙 익스피리언스"></a>
+        </h1>
+        <div class="util f_r font2">
+            <a href="">회원가입</a>
+            <a href="">로그인</a>
+            <a href="" class="btn_all" role="button">
+                <span class="blind-b">전체메뉴 열기</span>
+                <div class="motion p_a">
+                    <!-- 24X2, overflow:hidden -->
+                    <!-- .span_box>span*9 -->
+                    <div class="span_box p_a">
+                        <!-- 74X2, 모션 바로 뒤에서 대기중 -->
+                        <span></span> <!-- 6X2, 수평margin 1, float으로 한줄 위치 -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+            <!-- gnb, .gnb_circle => position: fixed -->
+            <!-- ul>li*5>a+ul -->
+            <nav id="gnb">
+                <h2 class="blind-b">주메뉴</h2>
+                <ul>
+                    <li>
+                        <a href="">HMG Driving Experience</a>
+                        <ul>
+                            <li><a href="">HMG Driving Experience</a></li>
+                            <li><a href="">SNS Lounge</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Driving Academy</a>
+                        <ul>
+                            <li><a href="">Driving Academy</a></li>
+                            <li><a href="">GENESIS Driving Academy</a></li>
+                            <li><a href="">Kia Driving Academy</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Driving Pleasure</a>
+                        <ul>
+                            <li><a href="">Trackday</a></li>
+                            <li><a href="">Test-drive</a></li>
+                            <li><a href="">Off-road</a></li>
+                            <li><a href="">Taxi-drive</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Hyundai N Festival</a>
+                        <ul>
+                            <li><a href="">About Hyundai N Festival</a></li>
+                            <li><a href="">Schedule</a></li>
+                            <li><a href="">Race Result</a></li>
+                            <li><a href="">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Customer Center</a>
+                        <ul>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Notice</a></li>
+                            <li><a href="">Q&amp;A</a></li>
+                            <li><a href="">Location</a></li>
+                        </ul>
+                    </li>
+            </nav>
+            <div class="gnb_circle"></div> <!-- 배경처리용 원 -->
+            <!-- a.btn_reserve -->
+            <a href="" class="btn_reserve">예약하기</a>
+        </div>
+    </header>
+
+    <div id="container">
+        <section id="cnt1"></section>
+        <section id="cnt2"></section>
+        <section id="cnt3"></section>
+        <section id="cnt4"></section>
+        <section id="cnt5"></section>
+        <section id="cnt6"></section>
+        <section id="cnt7"></section>
+        <!-- section#cnt$@5*7 특정 숫자부터 증가시키려면 @시작번호  -->
+    </div>
+
+    <footer id="footer"></footer>
+</body>
+
+</html>
