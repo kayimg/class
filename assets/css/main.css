@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* 1) 인덱스 전체 공통 */
+#container section{color: #ffffff;}
+#container section.font_dark{color: #222222;}
+.inner{padding-left: 210px; padding-right: 210px;}
+
+/* 2) 본문1 */
+.cnt1 .swiper-container{width: 100%; height: 100vh;}
+/* height: 100vh; 모니터 세로 높이(사이트가 보여지는 화면영역만) 한칸을 차지 */
+.cnt1 .swiper-slide{display: flex;align-items: center;padding-left: 210px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background: no-repeat center top;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}/* flex-direction: row;flex-wrap: nowap;justify-content: flex-start; */
+.cnt1 .slide1{background-image: url("../images/main/hmg-main-visual-img-001.jpg");}
+.cnt1 .slide2{background-image: url("../images/main/hmg-main-visual-img-002.jpg");}
+.cnt1 .slide3{background-image: url("../images/main/hmg-main-visual-img-003.jpg");}
+.cnt1 .slide4{background-image: url("../images/main/hmg-main-visual-img-004.jpg");}
+.cnt1 .slide5{background-image: url("../images/main/hmg-main-visual-img-005.jpg");}
+/* 부모 중앙(수직, 수평)에 위치 absolute, top: 50%;left: 50%;transform: translate(-50%, -50%);  */
+#mainVideo{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: auto;height: auto;min-width: 100%;min-height: 100%;}
+.cnt1 .swiper-slide .txt strong{display: block;font-family: HDhB;font-size: 82px;line-height: 1.1;}
+.cnt1 .swiper-slide .txt p{font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif; font-size: 18px;padding-top: 25px;}
+
+.cnt1 .swiper-container .controller{left: 210px;bottom: 130px;width: 280px;height: 70px;background: #000;z-index: 100;}
+
+
+/* 3) 본문2 ~ 본문 7 공통 */
+/* 4) 본문2 */
+/* 5) 본문3 */
+/* 6) 본문4 */
+/* 7) 본문5 */
+/* 8) 본문6 */
+/* 9) 본문7 */
