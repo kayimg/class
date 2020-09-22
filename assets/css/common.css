@@ -104,8 +104,11 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 
 #gnb > ul > li > a{display: block;;font-family: HDhB;font-size: 28px;margin-bottom: 38px;}
 #gnb ul li ul li + li{margin-top: 20px;}
-#gnb ul li ul li a{font-size: 18px;color: #b4b4b4;}
+#gnb ul li ul li a{position: relative; font-size: 18px;color: #b4b4b4;}
 #gnb ul li ul li a:hover, #gnb ul li ul li a:focus{color: #fff;}
+#gnb ul li ul li a::after, #gnb ul li ul li a::after{content: "";position: absolute;left: 0;bottom: -4px;width: 0;height: 2px;background: #ff0000;-webkit-transition: width 0.5s;-moz-transition: width 0.5s;-o-transition: width 0.5s;transition: width 0.5s;}
+#gnb ul li ul li a:hover::after, #gnb ul li ul li a:focus::after{width: 100%;}
+
 
 /* #gnb 배경 색상 처리 .gnb_circle */
 .gnb_circle{position: fixed;top: 45px;right: 275px;width: 1px;height: 1px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;background: #24292d;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
