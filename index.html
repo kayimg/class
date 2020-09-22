@@ -19,7 +19,7 @@
             var mySwiper1 = new Swiper('#cnt1 .swiper-container', {
                 // Optional parameters
                 direction: 'horizontal', //vertical, horizontal
-                loop: false,   //터치할 경우 마지막 슬라이더에서 처음으로 되돌리지 않음
+                loop: false, //터치할 경우 마지막 슬라이더에서 처음으로 되돌리지 않음
 
                 // 페이징 : fraction : 1/5
                 pagination: {
@@ -38,7 +38,19 @@
                     disableOnInteraction: false, //swipe 이후에도 자동실행 동작 
                 },
             })
-          //본문1 자동실행과 일시정지 추가
+            //본문1 자동실행과 일시정지 추가
+            //일시정지 버튼 클릭
+            $('.cnt1 .controller .autostop').on('click', function () {
+                $(this).hide().siblings().show();
+                mySwiper1.autoplay.stop(); //https://swiperjs.com/api/#autoplay
+                return false;
+            });
+            //자동실행 버튼 클릭
+            $('.cnt1 .controller .autoplay').on('click', function () {
+                $(this).hide().siblings().show();
+                mySwiper1.autoplay.start();
+                return false;
+            });
         });
     </script>
 </head>
@@ -151,7 +163,7 @@
                             <source src="assets/video/hmg-main-visual-movie-001.webm" type="video/webm">
                             <source src="assets/video/hmg-main-visual-movie-001.ogg" type="video/ogg">
                         </video>
-                        <div class="txt">
+                        <div class="txt p_r">
                             <strong>HMG 드라이빙 익스피리언스</strong>
                             <p>가족, 친구, 연인과 함께 드라이빙의 매력을 직접 경험해 보세요</p>
                         </div>

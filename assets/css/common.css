@@ -29,11 +29,13 @@
 
 /* tag reset */
 /*  *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}* 전체 선택자를 의미 */
-body, h1, h2, h3, h4, h5, h6, p, ul{margin: 0;padding: 0;}
+body, h1, h2, h3, h4, h5, h6, p, ul, button{margin: 0;padding: 0;}
 h1, h2, h3, h4, h5, h6{font-size: 100%;}
 ul{list-style: none;}
 a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
 img{border: none;vertical-align: top;}
+button{border:none;background: none;cursor: pointer;
+font-family: inherit; font-size: inherit; color: inherit;}
 header, nav, section, footer{display: block;}
 
 body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-serif;font-size: 16px;color: #666666;line-height: 1;letter-spacing: -0.6px;word-break: keep-all;background: #151515;}
@@ -74,7 +76,6 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 /* close버튼에 오버하는 경우 애니메이션 제거 */
 .btn_all.close:hover .motion .span_box{-webkit-animation: none;-moz-animation: none;-o-animation: none;animation: none;}
 .btn_all .motion .span_box span{float: left;width: 6px;height: 2px;background: #f00;margin: 0 1px;}
-
 
 @-webkit-keyframes dashMove{
     0%{left: 24px;}

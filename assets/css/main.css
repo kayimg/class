@@ -17,22 +17,27 @@
 /* 부모 중앙(수직, 수평)에 위치 absolute, top: 50%;left: 50%;transform: translate(-50%, -50%);  */
 #mainVideo{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: auto;height: auto;min-width: 100%;min-height: 100%;}
 .cnt1 .swiper-slide .txt strong{display: block;font-family: HDhB;font-size: 82px;line-height: 1.1;}
-.cnt1 .swiper-slide .txt p{font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif; font-size: 18px;padding-top: 25px;}
+.cnt1 .swiper-slide .txt p{font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;font-size: 18px;padding-top: 25px;}
+/* 컨트롤 버튼 */
+.cnt1 .controller{left: 210px;bottom: 130px;width: 280px;height: 70px;/* background: grey; */z-index: 100;}
+.cnt1 .controller > *{width: 60px;height: 60px;background: url("../images/icon/sp-hmg-pc-basic-large.png");top: 5px;}
 
-.cnt1 .swiper-container .controller{left: 210px;bottom: 130px;width: 280px;height: 70px;background: #000;z-index: 100;}
-
-.cnt1 .swiper-container .controller > div, .cnt1 .swiper-container .controller > button{width: 60px;height: 60px;background: url("../images/icon/sp-hmg-pc-basic-large.png");top: 5px;}
 /* 1) fraction타입의 페이징 */
-.cnt1 .swiper-container .controller .swiper-pagination{left: 75px;}
+.cnt1 .controller .swiper-pagination{left: 75px; background: none;line-height: 60px;}
+.cnt1 .controller .swiper-pagination .swiper-pagination-current{font-size: 1.3em;}
 /* 2) 이전과 다음버튼 */
-.cnt1 .swiper-container .controller .prev_next{color: transparent;margin-top: 0;} /* 공통으로 준 것 */
-.cnt1 .swiper-container .controller .swiper-button-prev{left: 5px;background-position: -900px -100px;}
-.cnt1 .swiper-container .controller .swiper-button-prev:hover, .cnt1 .swiper-container .controller .swiper-button-prev:focus{background-position: -1000px -100px;}
-.cnt1 .swiper-container .controller .swiper-button-next{right: 75px;}
+.cnt1 .controller .prev_next{color: transparent;margin-top: 0;}
+.cnt1 .controller .swiper-button-prev{left: 5px;background-position: -900px -100px;}
+.cnt1 .controller .swiper-button-prev:hover, .cnt1 .controller .swiper-button-prev:focus{background-position: -1000px -100px;}
+.cnt1 .controller .swiper-button-next{right: 75px;background-position: -1100px -100px;}
+.cnt1 .controller .swiper-button-next:hover, .cnt1 .controller .swiper-button-next:focus{background-position: -1200px -100px;}
 /* 3) play, stop 버튼 */
-.cnt1 .swiper-container .controller > button{position: absolute;right: 5px;}
+.cnt1 .controller > button{position: absolute;right: 5px;}
+.cnt1 .controller .autoplay{display: none;background-position: -700px -100px;}
+.cnt1 .controller .autoplay:hover, .cnt1 .controller .autoplay:focus{background-position: -800px -100px;}
+.cnt1 .controller .autostop{background-position: -500px -100px;}
+.cnt1 .controller .autostop:hover, .cnt1 .controller .autostop:focus{background-position: -600px -100px;}
 
-/* 3) 본문2 ~ 본문 7 공통 */
 /* 4) 본문2 */
 /* 5) 본문3 */
 /* 6) 본문4 */
