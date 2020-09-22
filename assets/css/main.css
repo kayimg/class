@@ -21,6 +21,16 @@
 
 .cnt1 .swiper-container .controller{left: 210px;bottom: 130px;width: 280px;height: 70px;background: #000;z-index: 100;}
 
+.cnt1 .swiper-container .controller > div, .cnt1 .swiper-container .controller > button{width: 60px;height: 60px;background: url("../images/icon/sp-hmg-pc-basic-large.png");top: 5px;}
+/* 1) fraction타입의 페이징 */
+.cnt1 .swiper-container .controller .swiper-pagination{left: 75px;}
+/* 2) 이전과 다음버튼 */
+.cnt1 .swiper-container .controller .prev_next{color: transparent;margin-top: 0;} /* 공통으로 준 것 */
+.cnt1 .swiper-container .controller .swiper-button-prev{left: 5px;background-position: -900px -100px;}
+.cnt1 .swiper-container .controller .swiper-button-prev:hover, .cnt1 .swiper-container .controller .swiper-button-prev:focus{background-position: -1000px -100px;}
+.cnt1 .swiper-container .controller .swiper-button-next{right: 75px;}
+/* 3) play, stop 버튼 */
+.cnt1 .swiper-container .controller > button{position: absolute;right: 5px;}
 
 /* 3) 본문2 ~ 본문 7 공통 */
 /* 4) 본문2 */
