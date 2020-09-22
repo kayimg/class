@@ -16,7 +16,7 @@
         $(document).ready(function () {
             //본문1 슬라이더
             //다양한 옵션 파라미터 https://swiperjs.com/api
-            var mySwiper1 = new Swiper('#cnt1 .swiper-container', {
+            var mySwiper1 = new Swiper('.cnt1 .swiper-container', {
                 // Optional parameters
                 direction: 'horizontal', //vertical, horizontal
                 loop: false, //터치할 경우 마지막 슬라이더에서 처음으로 되돌리지 않음
@@ -203,17 +203,21 @@
                     <div class="swiper-button-next prev_next"></div>
 
                     <!-- play, stop 버튼 추가하기 -->
-                    <button class="autoPlay play_stop" title="재생">
+                    <button class="autoplay play_stop" title="재생">
                         <span class="blind-b">재생</span>
                     </button>
-                    <button class="autoStop play_stop" title="일시정지">
+                    <button class="autostop play_stop" title="일시정지">
                         <span class="blind-b">일시정지</span>
                     </button>
                 </div>
             </div>
         </section>
 
-        <section class="cnt2 font_dark"></section>
+        <section class="cnt2 font_dark">
+            <div class="inner">
+
+            </div>
+        </section>
         <section class="cnt3"></section>
         <section class="cnt4"></section>
         <section class="cnt5"></section>
