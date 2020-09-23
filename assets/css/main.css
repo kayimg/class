@@ -53,9 +53,14 @@
 /* 5) 본문3 */
 .cnt3{padding-top: 220px;padding-bottom: 220px;}
 .academy_list{text-align: left;margin-top: 100px;}
-.academy_list li{float: left;width: 31.4%;padding-bottom: 130%; background: gray;}
-/* li::before{} 가상요소로 padding-bottom (% - 부모의 가로크기를 기준) */
+.academy_list li::before{content: "";display: block;padding-bottom: 130%;}
+/* li::before{padding-bottom: 130%;}가상요소로 padding-bottom (% - 부모의 가로크기를 기준) */
+.academy_list li{position: relative;float: left;width: 31.4%;background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+.academy_list li:nth-child(1){background-image: url("../images/main/hmg-main-academy-img-001.jpg");}
+.academy_list li:nth-child(2){background-image: url("../images/main/hmg-main-academy-img-002.jpg");}
+.academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-001.jpg");}
 .academy_list li + li{margin-left: 2.9%;}
+.academy_list li a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.2);}
 /* 6) 본문4 */
 /* 7) 본문5 */
 /* 8) 본문6 */
