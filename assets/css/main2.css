@@ -1,5 +1,25 @@
 @charset "utf-8";
+/* vw, vh 단위 설명(ie9부터 지원됨), %와의 차이점(vw, vh는 스크롤바를 포함)
+vw(viewport width) : 웹브라우저의 너비를 100을 기준으로 하여 크기를 결정하는 단위 
+vh(viewport height) : 웹브라우저의 높이를 100을 기준으로 하여 크기를 결정하는 단위 
+viewport란? 화면에서 실제 내용이 표시되는 영역, 화면상의 화상 표시 영역
 
+1) vw를 px로 환산
+만약 40vw를 1920, 1024 모니터로 보았다면
+변환식) 기준모니터크기 ÷ 100 × vw사이즈
+
+40vw란 1vw가 40개 => 1vw크기 × 40 => 
+1920모니터 ☞ 1vw(1920모니터/100) × 40 => 19.2픽셀 × 40 = 768픽셀
+1024모니터 ☞ 1vw(1024모니터/100) × 40 => 10.24픽셀 × 40 = 409.6픽셀
+
+2) px을 vw로 환산
+만약 500px을 1920, 1024 모니터로 보았다면
+변환식) px사이즈 × 100 ÷ 기준모니터크기
+
+500px란 1vw가 40개 => 1vw크기 × 40 => 
+1920모니터 ☞ 500픽셀 × 100 ÷ 1920모니터  => 26.04166666666667vw
+1024모니터 ☞ 500픽셀 × 100 ÷ 1024모니터  => 48.828125vw
+ */
 /* 1) 인덱스 전체 공통 */
 #container section{color: #ffffff;}
 #container section.font_dark{color: #222222;}
@@ -19,10 +39,9 @@
 
 .cnt1 .swiper-slide .txt strong{display: block;font-family: HDhB;font-size: 82px;line-height: 1.1;}
 .cnt1 .swiper-slide .txt p{font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;font-size: 18px;padding-top: 25px;}
-/* 컨트롤 버튼 */
+    /* 컨트롤 버튼 */
 .cnt1 .controller{left: 210px;bottom: 130px;width: 280px;height: 70px;/* background: grey */;z-index: 100;}
 .cnt1 .controller > *{width: 60px;height: 60px;background: url("../images/icon/sp-hmg-pc-basic-large.png");top: 5px;}
-
 /* 1) fraction타입의 페이징 */
 .cnt1 .controller .swiper-pagination{left: 75px;background: none;line-height: 60px;}
 .cnt1 .controller .swiper-pagination .swiper-pagination-current{font-size: 1.3em;}
@@ -38,6 +57,7 @@
 .cnt1 .controller .autoplay:hover, .cnt1 .controller .autoplay:focus{background-position: -800px -100px;}
 .cnt1 .controller .autostop{background-position: -500px -100px;}
 .cnt1 .controller .autostop:hover, .cnt1 .controller .autostop:focus{background-position: -600px -100px;}
+
 /* 3) 본문2 ~ 본문 7 공통 */
 .inner .tit_top{font-family: HDhB;font-size: 22px;}
 .inner .tit{margin-top: 10px;font-family: HDhB;font-size: 72px;line-height: 1.1;}
@@ -60,7 +80,7 @@
 .academy_list li:nth-child(2){background-image: url("../images/main/hmg-main-academy-img-002.jpg");}
 .academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-003.jpg");}
 .academy_list li + li{margin-left: 2.9%;}
-.academy_list li a{background: rgba(0,0,0,0);transition: background 0.3s ease-in-out;}
+.academy_list li a{background: rgba(0,0,0,0);}
 .academy_list li a:hover, .academy_list li a:focus{background: rgba(0,0,0,.2);}
 .academy_list li .list_txt{top: 8%;left: 2.5vw;border: 1px solid yellow;}
 /* 2.5vw => 1920모니터 (48px), 1024모니터 (2.6px)에서 몇 픽셀??
@@ -72,12 +92,12 @@
 75픽셀 X 100 / 1920 = 3.90625vw
 75픽셀 X 100 / 1380 = 5.434782608695652vw
 */
-.cnt3 .list_txt .brand{font-family: HDhB; font-size: 22px;}
+.cnt3 .list_txt .brand{font-family: HDhB;font-size: 22px;}
 .cnt3 .list_txt .btn_more{top: 80px;}
 
 /* 본문3과 본문4 공통 스타일 */
 .list{margin-top: 100px;}
-.list li{position: relative; float: left; background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+.list li{position: relative;float: left;background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .list li a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
@@ -91,11 +111,12 @@
 .list a:hover .list_txt .btn_more, .list a:focus .list_txt .btn_more{opacity: 1;top: 0;}
 
 /* 6) 본문4 */
+.cnt4{background: url("../images/main/main-section04-bg.jpg") no-repeat center top;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .cnt4 .inner{padding-top: 220px;}
 .pleasure_list li{width: 25%;}
 
 /* 작업1) .pleasure_list li의 높이를 인식시키기 => 가상요소로 padding-bottom 167% */
-.pleasure_list li::after{content: ""; display: block; padding-bottom: 167%;}
+.pleasure_list li::after{content:"";display: block;padding-bottom: 167%;}
 /* 작업2) 4개의 li에 배경이미지 */
 .pleasure_list li:nth-child(1){background-image: url("../images/main/hmg-main-pleasure-img-001.jpg");}
 .pleasure_list li:nth-child(2){background-image: url("../images/main/hmg-main-pleasure-img-002.jpg");}
@@ -106,10 +127,8 @@
 /* 작업4) .pleasure_list 내부의 a 태그만의 다른 스타일  */
 .pleasure_list li a{background: rgba(0,0,0,0.5);}
 .pleasure_list li a:hover, .pleasure_list li a:focus{background: rgba(0,0,0,0);}
-/* 작업5) .pleasure_list 내부의 .list_txt를 absolute로 수직 가운데 위치 시키기, 수평은 왼쪽, 가로크기 100% 
-(flex 말고 transform중 translateY로 -50% 올라오게 해서 수직가운데 위치하도록함) */
+/* 작업5) .pleasure_list 내부의 .list_txt를 absolute로 수직 가운데 위치 시키기, 수평은 왼쪽, 가로크기 100% */
 .pleasure_list li a .list_txt{top: 50%;transform:translateY(-50%);left:0; width: 100%;text-align: center;border: 1px solid yellowgreen;padding: 0 56px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
-
 /* 작업6) 2개의 p 태그는 원래 자신의 위치보다 100픽셀 만큼 하단에서 불투명도 0에서 1로 올라옴, strong과 인접한 p만 처음 줄간격이 0에서 활성화 되면 1.5로 늘어남 */
 .pleasure_list li a .list_txt p{margin-top: 0;line-height: 0;position: relative;top: 100px;opacity: 0;}
 .pleasure_list li a .list_txt strong + p{
@@ -125,7 +144,6 @@
 .pleasure_list li a:hover .list_txt .btn_more,
 .pleasure_list li a:focus .list_txt .btn_more{line-height: 44px;}
 .pleasure_list li a .list_txt .btn_more{-webkit-transition-delay: 0.1s;-moz-transition-delay: 0.1s;-o-transition-delay: 0.1s;transition-delay: 0.1s;}
-
 /* 7) 본문5 */
 /* 8) 본문6 */
 /* 9) 본문7 */
