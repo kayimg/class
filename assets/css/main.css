@@ -52,10 +52,10 @@
 
 /* 5) 본문3 */
 .cnt3{padding-top: 220px;padding-bottom: 220px;}
-.academy_list{text-align: left;margin-top: 100px;}
+.academy_list{text-align: left;}
 .academy_list li::before{content: "";display: block;padding-bottom: 130%;}
 /* li::before{padding-bottom: 130%;}가상요소로 padding-bottom (% - 부모의 가로크기를 기준) */
-.academy_list li{position: relative;float: left;width: 31.4%;background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+.academy_list li{width: 31.4%;}
 .academy_list li:nth-child(1){background-image: url("../images/main/hmg-main-academy-img-001.jpg");}
 .academy_list li:nth-child(2){background-image: url("../images/main/hmg-main-academy-img-002.jpg");}
 .academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-003.jpg");}
@@ -77,12 +77,17 @@
 .cnt3 .list_txt .btn_more{top: 80px;}
 
 /* 본문3과 본문4 공통 스타일 */
+.list{margin-top: 100px;}
+.list li{position: relative; float: left; background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .list_txt{position: absolute;}
 .list_txt strong{display: block;font-family: HDhB;font-size: 40px;}
 .list_txt .btn_more{position: relative;opacity: 0;}
 .list a:hover .list_txt .btn_more, .list a:focus .list_txt .btn_more{opacity: 1;top: 0;}
 
 /* 6) 본문4 */
+.cnt4 .inner{padding-top: 220px;}
+.cnt4 .pleasure_list li{width: 25%;}
+
 /* 7) 본문5 */
 /* 8) 본문6 */
 /* 9) 본문7 */
