@@ -42,7 +42,7 @@
 .inner .tit_top{font-family: HDhB;font-size: 22px;}
 .inner .tit{margin-top: 10px;font-family: HDhB;font-size: 72px;line-height: 1.1;}
 .inner .txt{margin-top: 27px;font-family: HDhL;font-size: 21px;line-height: 30px;}
-.btn_more{display: inline-block;font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;margin-top: 40px;width: 170px;height: 46px;line-height: 44px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;transition: all 0.5s;}
+.btn_more{display: inline-block;font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;margin-top: 40px;width: 170px;height: 46px;line-height: 44px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;transition: all 0.5s;text-align: center;}
 .btn_more.greytype{border: 1px solid #222;}
 .btn_more.whitetype{border: 1px solid #fff;}
 .btn_more:hover, .btn_more:focus{background-image: linear-gradient(to right, #ff8933 0%, #ea2e2e 100%);border-color: #ea2e2e;color: #ffffff;}
@@ -58,9 +58,30 @@
 .academy_list li{position: relative;float: left;width: 31.4%;background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .academy_list li:nth-child(1){background-image: url("../images/main/hmg-main-academy-img-001.jpg");}
 .academy_list li:nth-child(2){background-image: url("../images/main/hmg-main-academy-img-002.jpg");}
-.academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-001.jpg");}
+.academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-003.jpg");}
 .academy_list li + li{margin-left: 2.9%;}
-.academy_list li a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.2);}
+.academy_list li a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+    background: rgba(0,0,0,0);transition: background 0.3s ease-in-out;}
+.academy_list li a:hover, .academy_list li a:focus{background: rgba(0,0,0,.2);}
+.academy_list li .list_txt{top: 8%;left: 2.5vw;border: 1px solid yellow;}
+/* 2.5vw => 1920모니터 (48px), 1024모니터 (2.6px)에서 몇 픽셀??
+2.5vw는 1vw가 2.5개 존재
+1920/100 = 19.2픽셀 x 2.5 = 48px
+1024/100 = 10.24픽셀 x 2.5 = 25.6px
+
+75px 1920모니터, 1380모니터에서 몇 vw?
+75픽셀 X 100 / 1920 = 3.90625vw
+75픽셀 X 100 / 1380 = 5.434782608695652vw
+*/
+.cnt3 .list_txt .brand{font-family: HDhB; font-size: 22px;}
+.cnt3 .list_txt .btn_more{top: 80px;}
+
+/* 본문3과 본문4 공통 스타일 */
+.list_txt{position: absolute;}
+.list_txt strong{display: block;font-family: HDhB;font-size: 40px;}
+.list_txt .btn_more{position: relative;opacity: 0;}
+.list a:hover .list_txt .btn_more, .list a:focus .list_txt .btn_more{opacity: 1;top: 0;}
+
 /* 6) 본문4 */
 /* 7) 본문5 */
 /* 8) 본문6 */
