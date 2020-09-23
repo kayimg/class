@@ -60,8 +60,7 @@
 .academy_list li:nth-child(2){background-image: url("../images/main/hmg-main-academy-img-002.jpg");}
 .academy_list li:nth-child(3){background-image: url("../images/main/hmg-main-academy-img-003.jpg");}
 .academy_list li + li{margin-left: 2.9%;}
-.academy_list li a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;
-    background: rgba(0,0,0,0);transition: background 0.3s ease-in-out;}
+.academy_list li a{background: rgba(0,0,0,0);transition: background 0.3s ease-in-out;}
 .academy_list li a:hover, .academy_list li a:focus{background: rgba(0,0,0,.2);}
 .academy_list li .list_txt{top: 8%;left: 2.5vw;border: 1px solid yellow;}
 /* 2.5vw => 1920모니터 (48px), 1024모니터 (2.6px)에서 몇 픽셀??
@@ -79,6 +78,9 @@
 /* 본문3과 본문4 공통 스타일 */
 .list{margin-top: 100px;}
 .list li{position: relative; float: left; background: no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+/* a 공통 스타일 여기에 정리 */
+.list li a{position: absolute; left: 0; top: 0;width: 100%;height: 100%; transition: all 0.3s;}
+
 .list_txt{position: absolute;}
 .list_txt strong{display: block;font-family: HDhB;font-size: 40px;}
 .list_txt .btn_more{position: relative;opacity: 0;}
@@ -86,7 +88,25 @@
 
 /* 6) 본문4 */
 .cnt4 .inner{padding-top: 220px;}
-.cnt4 .pleasure_list li{width: 25%;}
+.pleasure_list li{width: 25%;}
+
+/* 작업1) .pleasure_list li의 높이를 인식시키기 => 가상요소로 padding-bottom 167% */
+.pleasure_list li::after{content: ""; display: block; padding-bottom: 167%;}
+/* 작업2) 4개의 li에 배경이미지 */
+.pleasure_list li:nth-child(1){background-image: url("../images/main/hmg-main-pleasure-img-001.jpg");}
+.pleasure_list li:nth-child(2){background-image: url("../images/main/hmg-main-pleasure-img-002.jpg");}
+.pleasure_list li:nth-child(3){background-image: url("../images/main/hmg-main-pleasure-img-003.jpg");}
+.pleasure_list li:nth-child(4){background-image: url("../images/main/hmg-main-pleasure-img-004.jpg");}
+/* 작업3) 공통으로 위치 변경 : .list li a */
+
+
+/* 작업4) .pleasure_list 내부의 a 태그만의 다른 스타일  */
+.pleasure_list li a{background: rgba(0,0,0,0.5);}
+.pleasure_list li a:hover, .pleasure_list li a:focus{background: rgba(0,0,0,0);}
+/* 작업5) .pleasure_list 내부의 .list_txt를 absolute로 수직 가운데 위치 시키기, 수평은 왼쪽, 가로크기 100% 
+(flex 말고 transform중 translateY로 -50% 올라오게 해서 수직가운데 위치하도록함) */
+
+/* 작업6) 2개의 p 태그는 원래 자신의 위치보다 100픽셀 만큼 하단에서 불투명도 0에서 1로 올라옴, strong과 인접한 p만 처음 줄간격이 0에서 활성화 되면 1.5로 늘어남 */
 
 /* 7) 본문5 */
 /* 8) 본문6 */
