@@ -127,5 +127,11 @@
 .pleasure_list li a .list_txt .btn_more{-webkit-transition-delay: 0.1s;-moz-transition-delay: 0.1s;-o-transition-delay: 0.1s;transition-delay: 0.1s;}
 
 /* 7) 본문5 */
+.cnt5{height: 100vh;}
+.nFestival_bg{top: 0;left: 50%;transform: translateX(-50%);width: 100%;height: 100%;background: url("../images/main/hmg-main-n-festival-bg.jpg") no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;z-index: -1;transition: width 0.5s ease-in-out;}
+
+/* 수평방향은 가운데 위치시키기(가로크기가 200%에서 100%로 조절) */
+.cnt5 .inner{padding-top: 223px;}
+
 /* 8) 본문6 */
 /* 9) 본문7 */

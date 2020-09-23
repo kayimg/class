@@ -1,0 +1,43 @@
+== 2.0버전 ==
+TweenMax.min.js 파일 추가
+
+.to
+TweenMax.to('html, body', 1, {scrollTop: 200, ease:Power1.easeOut});
+첫 번째 파라미터는 트윈 할 대상(Target)입니다. 
+두 번째 파라미터는 초 단위의 지속시간(duration), 
+세 번째는 속성(Properties)인데, 대상이 기존에 가지고 있던 속성 값과는 다른, 변화 된 값(End values)이어야 합니다. 
+그래야만 시작 속성에서 끝 속성으로 변화가 발생하면서, 이것이 움직임으로 표현됩니다.
+
+.from
+TweenMax.from('#box', 2, {left: 200});
+반대로, .from() 메서드는, 트윈에 명시한 값에서 스타일시트에 명시된 값으로 변화합니다. 
+그래서 .from() 메서드는 별도의 스타일시트 작성 없이, 한번 움직임을 줬던 객체를 역방향으로 다시 움직이게 할 때 용이합니다. 
+예제의 경우는, 객체가 다시 좌측으로 200px 이동합니다.
+
+.fromTo
+TweenMax.fromTo('#box', 2, {left:0}, {left: 200});
+스타일시트에 값을 명시하지 않고, 트윈의 .fromTo() 메서드를 사용하면 시작 값과 끝 값을 모두 명시해서 사용할 수도 있습니다. 
+이 경우는, 스타일시트에 값이 있더라도 무시합니다.
+
+이 외에도 여러가지 메서드를 사용해서 다양한 조작이 가능합니다. 에를들면, pause(), resume(), reverse(), restart() 등이 있습니다.
+
+== 3.0버전 ==
+TweenMax.min.js 파일 추가
+gsap-latest-beta.min.js 파일이 더 필요함
+
+.to
+gsap.to("#box", {rotation: 27, x: 100, duration: 1});
+첫 번째 파라미터는 트윈 할 대상(Target)
+두 번째 속성(Properties)
+시작 속성에서 끝 속성으로 변화가 발생
+
+.from
+gsap.from('#box', {left: 200, duration: 2});
+반대로, .from() 메서드는, 트윈에 명시한 값에서 스타일시트에 명시된 값으로 변화 
+그래서 .from() 메서드는 별도의 스타일시트 작성 없이, 한번 움직임을 줬던 객체를 역방향으로 다시 움직이게 할 때 용이합니다. 
+
+
+.fromTo
+gsap.fromTo("#box", {opacity: 0}, {opacity: 0.5, duration: 1});
+스타일시트에 값을 명시하지 않고, 트윈의 .fromTo() 메서드를 사용하면 시작 값과 끝 값을 모두 명시해서 사용할 수도 있습니다. 
+이 경우는, 스타일시트에 값이 있더라도 무시합니다.
