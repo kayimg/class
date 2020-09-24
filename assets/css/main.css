@@ -162,6 +162,28 @@
 
 /* 9) 본문7 */
 .cnt7{padding: 0 80px;background: #000;font-size: 18px;}
-.cnt7 .inner{text-align: left;padding: 25px 0 25px 110px;height: 80px;line-height: 30px;background: grey;}
+.cnt7 .inner{text-align: left;padding: 25px 0 25px 110px;height: 80px;line-height: 30px;/* background: grey; */}
 .cnt7 .inner h2{position: absolute;font-family: HDhB;top: 25px;left: 0;}
 .cnt7 .inner h2 a:hover, .cnt7 .inner h2:focus{text-decoration: underline;}
+/* 본문7 슬라이더 */
+.cnt7 .swiper-container::before{content: "";position: absolute;top: 0;left: calc(50% - 60px);width: 1px;height: 30px;background: #ffffff;}
+.cnt7 .swiper-slide{padding-right: 100px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.cnt7 .swiper-slide a{position: relative;float: left;width: calc(100% - 140px);white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.cnt7 .swiper-slide span{float: right;font-size: 16px;color: #999;}
+
+/* 접근성 추가 - 보여지지 않는 슬라이더에 포커스를 제한 */
+.cnt7 .swiper-slide > *{visibility: hidden;}/* display: none 달리 현재 공간을 차지 */
+.cnt7 .swiper-slide.swiper-slide-active > *, .cnt7 .swiper-slide.swiper-slide-next > *{visibility: visible;}
+
+/* 포커스 제어 - 아웃라인 제거 하고 absolute 가상요소로 만들어 테두리 처리  */
+.cnt7 .swiper-slide a:focus, .cnt7 .controller > *:focus{outline: none;}
+.cnt7 .swiper-slide a:focus::after, .cnt7 .controller > *:focus::after{content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 1px solid #fff;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+.cnt7 .controller{top: 2.5px;right: 0;width: 75px;height: 25px;background: #000;}
+.cnt7  .prev_next, .cnt7 .play_stop{top: 0;width: 25px;height: 25px;margin-top: 0;z-index: 10;color: transparent;background: url("../images/icon/main-news-ctrl.png") no-repeat;}
+.cnt7 .swiper-button-prev{left: 0;}
+.cnt7 .swiper-button-next{right: 0;background-position: right top;}
+
+.cnt7 .play_stop{left: 25px;}
+.cnt7 .autoplay{display: none;background-position: -50px 0;}
+.cnt7 .autostop{background-position: -25px 0;}
