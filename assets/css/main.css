@@ -130,11 +130,11 @@
 .pleasure_list li a .list_txt .btn_more{-webkit-transition-delay: 0.1s;-moz-transition-delay: 0.1s;-o-transition-delay: 0.1s;transition-delay: 0.1s;}
 
 /* 7) 본문5 */
-.cnt5{height: 100vh;}
+.cnt5{height: 100vh;overflow: hidden;}
 .nFestival_bg{top: 0;left: 50%;transform: translateX(-50%);width: 100%;height: 100%;background: url("../images/main/hmg-main-n-festival-bg.jpg") no-repeat center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;z-index: -1;transition: width 0.5s ease-in-out;}
 
 /* 수평방향은 가운데 위치시키기(가로크기가 200%에서 100%로 조절) */
-.cnt5 .inner{padding-top: 223px;}
+.cnt5 .inner{padding-top: 223px;text-align: left;}
 
 /* 8) 본문6 */
 .cnt6 .inner{padding-top: 220px;padding-bottom: 200px;}
@@ -157,4 +157,11 @@
 .sns_list li a:hover p, .sns_list li a:focus p{opacity: 1;}
 .sns_list li a, .sns_list li a p{-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-o-transition: all 0.3s;transition: all 0.3s;}
 
+/* 본문2 ~ 본문6까지 스크롤을 움직이면 숨겼다 나타나는 컨텐츠 공통 제어 */
+.inner .tit_top, .inner .tit, .inner .txt, .list li, .sns_list{position: relative;top: 100px;opacity: 0;}
+
 /* 9) 본문7 */
+.cnt7{padding: 0 80px;background: #000;font-size: 18px;}
+.cnt7 .inner{text-align: left;padding: 25px 0 25px 110px;height: 80px;line-height: 30px;background: grey;}
+.cnt7 .inner h2{position: absolute;font-family: HDhB;top: 25px;left: 0;}
+.cnt7 .inner h2 a:hover, .cnt7 .inner h2:focus{text-decoration: underline;}

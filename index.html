@@ -16,6 +16,10 @@
     <script src="assets/js/main.js"></script><!-- main.js에서gsap를 호출해서 사용하므로 gsap.min.js를 먼저 작성해야 함 -->
     <script>
         $(document).ready(function () {
+            /* 슬라이더 접근성
+             자동재생이 되는 경우 반드시 사용자가 자동실행을 멈출 수 있어야 한다.
+             - 정지버튼, 슬라이더에 마우스를 진입하거나 포커스가 간 경우 멈추기        
+            */
             //본문1 슬라이더
             //다양한 옵션 파라미터 https://swiperjs.com/api
             var mySwiper1 = new Swiper('.cnt1 .swiper-container', {
@@ -36,7 +40,7 @@
                 },
                 // 자동실행
                 autoplay: {
-                    delay: 2000, //1초 = 1000
+                    delay: 5000, //1초 = 1000
                     disableOnInteraction: false, //swipe 이후에도 자동실행 동작 
                 },
             })
@@ -48,6 +52,39 @@
                 return false;
             });
             //자동실행 버튼 클릭
+            $('.cnt1 .controller .autoplay').on('click', function () {
+                $(this).hide().siblings().show();
+                mySwiper1.autoplay.start();
+                return false;
+            });
+            //본문7 슬라이더
+            var mySwiper7 = new Swiper('.cnt7 .swiper-container', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: false,
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                //재생과 일시정지 추가
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false, //swipe 이후에도 자동실행 동작
+                },
+                //한화면에 여러개 슬라이더 노출
+                slidesPerView: 2,
+                //슬라이드 사이의 간격
+                spaceBetween: 100,
+            });
+            //본문7 자동실행과 일시정지 추가
+            //일시정지 클릭
+            $('.cnt7 .controller .autostop').on('click', function () {
+                $(this).hide().siblings().show();
+                mySwiper7.autoplay.stop(); //https://swiperjs.com/api/#autoplay
+                return false;
+            });
+            //자동실행 클릭
             $('.cnt1 .controller .autoplay').on('click', function () {
                 $(this).hide().siblings().show();
                 mySwiper1.autoplay.start();
@@ -225,168 +262,241 @@
         </section>
         <section class="cnt3">
             <div class="inner">
-              <p class="tit_top">Ready for Start</p>
-              <h2 class="tit">Driving Academy</h2>
-              <p class="txt">안전운전을 위한 드라이빙의 기초부터 짜릿한 서킷 주행 공략까지<br>
-                전문 인스트럭터의 지원과 Level 1~3로 구성된 체계적인 교육 프로그램</p>
-              <ul class="academy_list list clearfix">
-                <li> <!-- 배경이미지 -->
-                  <a href="">  <!-- 오버하거나 포커스가 가면 rgba 불투명도 0.2의 검정색 색상 -->
-                    <div class="list_txt">
-                        <p class="brand"><strong>Hyundai</strong>Driving Academy</p>
-                        <p class="btn_more whitetype">Learn More</p>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="list_txt">
-                        <p class="brand"><strong>GENESIS</strong>Driving Academy</p>
-                        <p class="btn_more whitetype">Learn More</p>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="list_txt">
-                        <p class="brand"><strong>Kia</strong>Driving Academy</p>
-                        <p class="btn_more whitetype">Learn More</p>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+                <p class="tit_top">Ready for Start</p>
+                <h2 class="tit">Driving Academy</h2>
+                <p class="txt">안전운전을 위한 드라이빙의 기초부터 짜릿한 서킷 주행 공략까지<br>
+                    전문 인스트럭터의 지원과 Level 1~3로 구성된 체계적인 교육 프로그램</p>
+                <ul class="academy_list list clearfix">
+                    <li>
+                        <!-- 배경이미지 -->
+                        <a href="">
+                            <!-- 오버하거나 포커스가 가면 rgba 불투명도 0.2의 검정색 색상 -->
+                            <div class="list_txt">
+                                <p class="brand"><strong>Hyundai</strong>Driving Academy</p>
+                                <p class="btn_more whitetype">Learn More</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="list_txt">
+                                <p class="brand"><strong>GENESIS</strong>Driving Academy</p>
+                                <p class="btn_more whitetype">Learn More</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="list_txt">
+                                <p class="brand"><strong>Kia</strong>Driving Academy</p>
+                                <p class="btn_more whitetype">Learn More</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </section>
-          <section class="cnt4">
+        </section>
+        <section class="cnt4">
             <div class="inner">
-              <p class="tit_top">New Experience</p>
-              <h2 class="tit">Driving Pleasure</h2>
-              <p class="txt">현대/제네시스/기아자동차의 주요 차종을 다양하게 시승할 수 있는 서킷 테스트 드라이브부터<br>
-                누구나 즐길 수 있는 서킷 택시 체험까지, 스포츠 드라이빙의 즐거움을 느낄 수 있는 프로그램</p>
+                <p class="tit_top">New Experience</p>
+                <h2 class="tit">Driving Pleasure</h2>
+                <p class="txt">현대/제네시스/기아자동차의 주요 차종을 다양하게 시승할 수 있는 서킷 테스트 드라이브부터<br>
+                    누구나 즐길 수 있는 서킷 택시 체험까지, 스포츠 드라이빙의 즐거움을 느낄 수 있는 프로그램</p>
             </div>
             <ul class="pleasure_list list clearfix">
-              <li> <!-- 배경이미지 -->
-                  <a href=""> <!-- 검정 rgba 불투명도 0.5에서 0으로 전환 -->
-                    <div class="list_txt">
-                        <strong>Trackday</strong>
-                        <p>현대/제네시스/기아자동차 고객이라면<br>
-                            누구나 참여할 수 있는 자차 주행 프로그램</p>
-                        <p class="btn_more whitetype">Learn More</p>  
-                    </div>
-                  </a>
-              </li>
-              <li> 
-                  <a href=""> 
-                    <div class="list_txt">
-                        <strong>Test-drive</strong>
-                        <p>다양한 차량을 전문 인스트럭터와 함께<br>
-                            서킷에서 체험하는 고객 시승 프로그램</p>
-                        <p class="btn_more whitetype">Learn More</p>  
-                    </div>
-                  </a>
-              </li>
-              <li> 
-                  <a href=""> 
-                    <div class="list_txt">
-                        <strong>Off-road</strong>
-                        <p>특수 제작된 구조물들을 이용해<br>
-                            Off-Road와 유사한 환경을 경험할 수 있는 프로그램</p>
-                        <p class="btn_more whitetype">Learn More</p>  
-                    </div>
-                  </a>
-              </li>
-              <li> 
-                  <a href=""> 
-                    <div class="list_txt">
-                        <strong>Taxi-drive</strong>
-                        <p>전문 드라이버가 운전하는 차량에 동승해<br>
-                            서킷 주행을 짜릿하게 경험할 수 있는</p>
-                        <p class="btn_more whitetype">Learn More</p>  
-                    </div>
-                  </a>
-              </li>
+                <li>
+                    <!-- 배경이미지 -->
+                    <a href="">
+                        <!-- 검정 rgba 불투명도 0.5에서 0으로 전환 -->
+                        <div class="list_txt">
+                            <strong>Trackday</strong>
+                            <p>현대/제네시스/기아자동차 고객이라면<br>
+                                누구나 참여할 수 있는 자차 주행 프로그램</p>
+                            <p class="btn_more whitetype">Learn More</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="list_txt">
+                            <strong>Test-drive</strong>
+                            <p>다양한 차량을 전문 인스트럭터와 함께<br>
+                                서킷에서 체험하는 고객 시승 프로그램</p>
+                            <p class="btn_more whitetype">Learn More</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="list_txt">
+                            <strong>Off-road</strong>
+                            <p>특수 제작된 구조물들을 이용해<br>
+                                Off-Road와 유사한 환경을 경험할 수 있는 프로그램</p>
+                            <p class="btn_more whitetype">Learn More</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="list_txt">
+                            <strong>Taxi-drive</strong>
+                            <p>전문 드라이버가 운전하는 차량에 동승해<br>
+                                서킷 주행을 짜릿하게 경험할 수 있는</p>
+                            <p class="btn_more whitetype">Learn More</p>
+                        </div>
+                    </a>
+                </li>
             </ul>
-          </section>
+        </section>
 
-          <section class="cnt5 p_r">
+        <section class="cnt5 p_r">
             <div class="nFestival_bg p_a"></div><!-- 200%의 배경크기를 스크롤바를 움직이면 점점 작아짐. absolute, z-index: -1 -->
-            <div class="inner"><!-- 왼쪽정렬 -->
-              <p class="tit_top">Enjoy this moment</p>
-              <h2 class="tit">Hyundai N Festival</h2>
-              <p class="txt">끊임없는 도전 정신과 질주본능을 자극하는 국내 최고 원메이크 레이스</p>
-              <a href="" class="btn_more greytype">Learn More</a>
-            </div>
-          </section>
-          
-          <section class="cnt6">
             <div class="inner">
-              <h2 class="tit">SNS Lounge</h2>
-              <a href="" class="btn_more whitetype">Learn More</a>
-              <ul class="sns_list">
-                <li><!-- 배경이미지, li가 크기를 1대1 정사각형으로 인식할수 있도록 가상요소를 만들고 padding-bottom을 100% -->
-                    <a href=""><!-- 오버, 포커스 검정배경 rgba, flex로 자식을 수직 가운데 위치 -->
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                    </a>    
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-                <li>
-                    <a href=""></a>
-                    <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
-                        🏁ROUND 4<br>
-                        2020년 9월 26일(토) 13:10 ~<br>
-                        🏁ROUND ...</p>
-                </li>
-              </ul>
+                <!-- 왼쪽정렬 -->
+                <p class="tit_top">Enjoy this moment</p>
+                <h2 class="tit">Hyundai N Festival</h2>
+                <p class="txt">끊임없는 도전 정신과 질주본능을 자극하는 국내 최고 원메이크 레이스</p>
+                <a href="" class="btn_more greytype">Learn More</a>
             </div>
-          </section>
-          <section class="cnt7"></section>
-        <!-- section#cnt$@5*7 특정 숫자부터 증가시키려면 @시작번호  -->
-    </div>
+        </section>
 
+        <section class="cnt6">
+            <div class="inner">
+                <h2 class="tit">SNS Lounge</h2>
+                <a href="" class="btn_more whitetype">Learn More</a>
+                <ul class="sns_list">
+                    <li>
+                        <!-- 배경이미지, li가 크기를 1대1 정사각형으로 인식할수 있도록 가상요소를 만들고 padding-bottom을 100% -->
+                        <a href="">
+                            <!-- 오버, 포커스 검정배경 rgba, flex로 자식을 수직 가운데 위치 -->
+                            <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                                🏁ROUND 4<br>
+                                2020년 9월 26일(토) 13:10 ~<br>
+                                🏁ROUND ...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                    <li>
+                        <a href=""></a>
+                        <p>🚨현대 N 페스티벌 ROUND 4/5 더블라운드 중계 안내<br>
+                            🏁ROUND 4<br>
+                            2020년 9월 26일(토) 13:10 ~<br>
+                            🏁ROUND ...</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="cnt7">
+            <div class="inner">
+                <h2>
+                    <a href="">NEWS <span aria-hidden="true">&gt;</span></a>
+                </h2>
+
+                <!-- Slider 그룹 -->
+                <div class="swiper-container">
+                    <!-- 슬라이더 본문 내용 그룹 -->
+                    <div class="swiper-wrapper">
+                        <!-- 슬라이더 각각의 상세 내용  -->
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">2020 Hyundai N Festival 2.3라운드 타임테이블 안내드립니다</a>
+                            <span>2020.08.06</span>
+                        </div>
+                    </div>
+                    <div class="controller">
+                        <!-- 1) 이전과 다음버튼 -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                        <!-- 2) 자동실행과 일시정지 버튼 -->
+                        <button class="autoplay play_stop" title="재생">
+                            <span class="blind-b">재생</span>
+                        </button>
+                        <button class="autostop play_stop" title="일시정지">
+                            <span class="blind-b">일시정지</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <!-- section#cnt$@5*7 특정 숫자부터 증가시키려면 @시작번호  -->
+    </div>
     <footer id="footer"></footer>
 </body>
 
