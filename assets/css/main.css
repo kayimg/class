@@ -91,7 +91,9 @@
 .list a:hover .list_txt .btn_more, .list a:focus .list_txt .btn_more{opacity: 1;top: 0;}
 
 /* 6) 본문4 */
+.cnt4{background: url("../images/main/main-section04-bg.jpg") no-repeat center top;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .cnt4 .inner{padding-top: 220px;}
+.pleasure_list{overflow: hidden;}/* li를 relative로 top100만큼 내려놓아서 다음번 섹션(.cnt5)으로 영역이 침범된다, 침범한 영역을 보여지지 않게 하려고 hidden 처리 */
 .pleasure_list li{width: 25%;}
 
 /* 작업1) .pleasure_list li의 높이를 인식시키기 => 가상요소로 padding-bottom 167% */
