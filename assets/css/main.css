@@ -134,4 +134,8 @@
 .cnt5 .inner{padding-top: 223px;}
 
 /* 8) 본문6 */
+
+/* 본문2 ~ 본문6까지 스크롤을 움직이면 숨겼다 나타나는 컨텐츠 공통 제어 */
+.inner .tit_top, .inner .tit, .inner .txt, .academy_list li, .pleasure_list li{position: relative;top: 100px;opacity: 0;}
+
 /* 9) 본문7 */

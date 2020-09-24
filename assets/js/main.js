@@ -33,7 +33,7 @@ $(document).ready(function () {
 			*/
   
     if($(window).scrollTop() > $(".cnt2").offset().top - 500){
-      gsap.to(".cnt2.inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt2 .inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
       gsap.to(".cnt2 .inner .tit", {delay:0.2, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
       gsap.to(".cnt2 .inner .txt", {delay:0.3, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
       gsap.to(".cnt2 .btn_more", {delay:0.4, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
