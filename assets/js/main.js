@@ -19,50 +19,57 @@ $(document).ready(function () {
 
     // 여기부터 컨텐츠 스크롤에 나타나기
     /* https://greensock.com/tweenmax/
-      TweenMax.to('html, body', 1, {scrollTop: 200, ease:Power1.easeOut});
+			2.0버전
+			TenMax.to('선택자', 1, {scrollTop: 200, ease:Power1.easeOut});
       첫 번째 파라미터는 트윈 할 대상(Target)입니다. 
       두 번째 파라미터는 초 단위의 지속시간(duration), 
-      세 번째는 속성(Properties)인데, 대상이 기존에 가지고 있던 속성 값과는 다른, 변화 된 값(End values)이어야 합니다. */
+      세 번째는 속성(Properties)인데, 대상이 기존에 가지고 있던 속성 값과는 다른, 변화 된 값(End values)이어야 합니다.
+			
+			3.0버전
+			gsap.to('선택자', {scrollTop: 200, ease:Power1.easeOut, duration: 1});
+      첫 번째 파라미터는 트윈 할 대상(Target)입니다. 
+      두 번째 속성(Properties)인데, 대상이 기존에 가지고 있던 속성 값과는 다른, 변화 된 값(End values)이어야 합니다.
+			지속시간도 속성에 추가합니다
+			*/
   
     if($(window).scrollTop() > $(".cnt2").offset().top - 500){
-      //gsap.to(".cnt2.inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
-      TweenMax.to($(".cnt2 .inner .tit_top"), 0.5, {delay:0, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt2 .inner .tit"), 0.5, {delay:0.2, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt2 .inner .txt"), 0.5, {delay:0.3, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt2 .btn_more"), 0.5, {delay:0.4, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt2.inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt2 .inner .tit", {delay:0.2, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt2 .inner .txt", {delay:0.3, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt2 .btn_more", {delay:0.4, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
     };
   
     if($(window).scrollTop() > $(".cnt3").offset().top - 500){
-      TweenMax.to($(".cnt3 .inner .tit_top"), 0.5, {delay:0, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt3 .inner .tit"), 0.5, {delay:0.2, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt3 .inner .txt"), 0.5, {delay:0.3, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt3 .academy_list li:nth-child(1)"), 0.5, {delay:0.5, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt3 .academy_list li:nth-child(2)"), 0.5, {delay:0.8, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt3 .academy_list li:nth-child(3)"), 0.5, {delay:1.1, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt3 .inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt3 .inner .tit", {delay:0.2, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt3 .inner .txt", {delay:0.3, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt3 .academy_list li:nth-child(1)", {delay:0.5, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt3 .academy_list li:nth-child(2)", {delay:0.8, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt3 .academy_list li:nth-child(3)", {delay:1.1, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
     };
   
     if($(window).scrollTop() > $(".cnt4").offset().top - 500){
-      TweenMax.to($(".cnt4 .inner .tit_top"), 0.5, {delay:0, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt4 .inner .tit"), 0.5, {delay:0.2, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt4 .inner .txt"), 0.5, {delay:0.3, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt4 .inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt4 .inner .tit", {delay:0.2, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt4 .inner .txt", {delay:0.3, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
 
-      TweenMax.to($(".cnt4 .pleasure_list li:nth-child(1)"), 1, {delay:0.5, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt4 .pleasure_list li:nth-child(2)"), 1, {delay:0.8, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt4 .pleasure_list li:nth-child(3)"), 1, {delay:1.1, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt4 .pleasure_list li:nth-child(4)"), 1, {delay:1.4, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt4 .pleasure_list li:nth-child(1)", {delay:0.5, top:0, opacity:1, duration: 1, ease:Power3.easeOut});
+      gsap.to(".cnt4 .pleasure_list li:nth-child(2)", {delay:0.8, top:0, opacity:1, duration: 1, ease:Power3.easeOut});
+      gsap.to(".cnt4 .pleasure_list li:nth-child(3)", {delay:1.1, top:0, opacity:1, duration: 1, ease:Power3.easeOut});
+      gsap.to(".cnt4 .pleasure_list li:nth-child(4)", {delay:1.4, top:0, opacity:1, duration: 1, ease:Power3.easeOut});
     }
  
     if($(window).scrollTop() > $(".cnt5").offset().top - 500){
-      TweenMax.to($(".cnt5 .inner .tit_top"), 0.5, {delay:0, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt5 .inner .tit"), 0.5, {delay:0.2, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt5 .inner .txt"), 0.5, {delay:0.3, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt5 .btn_more"), 0.5, {delay:0.4, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt5 .inner .tit_top", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt5 .inner .tit", {delay:0.2, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt5 .inner .txt", {delay:0.3, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt5 .btn_more", {delay:0.4, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
     };
     
     if($(window).scrollTop() > $(".cnt6").offset().top - 400){
-      TweenMax.to($(".cnt6 .inner .tit"), 0.5, {delay:0, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt6 .btn_more"), 0.5, {delay:0.4, top:0, opacity:1, ease:Power3.easeOut});
-      TweenMax.to($(".cnt6 .sns_list"), 0.5, {delay:0.6, top:0, opacity:1, ease:Power3.easeOut});
+      gsap.to(".cnt6 .inner .tit", {delay:0, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt6 .btn_more", {delay:0.4, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
+      gsap.to(".cnt6 .sns_list", {delay:0.6, top:0, opacity:1, duration: 0.5, ease:Power3.easeOut});
     };
 
   });

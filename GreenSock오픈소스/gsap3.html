@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gsap 트윈맥스 오픈소스 - 3.0사용법</title>
+    <style>
+        body{margin: 0;padding: 0;}
+        /* #box{position: absolute;left: 50%;transform: translateX(-50%);height: 300px;font-size: 30px;color: #ffffff;top: 0;width: 500px;background: green;} */
+
+        /* fromTo로 편집 */
+        #box{position: absolute;left: 50%;transform: translateX(-50%);height: 300px;font-size: 30px;color: #ffffff;}
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //가속도 감속도 효과 https://greensock.com/get-started#easing
+            //gsap.to('선택자', {속성1: 값1, 속성2: 값2, duration: 초});
+            //to : 0%에서 100% 순방향 애니메이션
+            gsap.to('#box', {top: '100px', width: '1000px', backgroundColor: 'red', ease: "power2.easeInOut", duration: 3});
+
+            //from : 100%에서 0% 역방향 애니메이션
+            //gsap.from('#box', {top: '100px', width: '1000px', backgroundColor: 'red', ease: "power2.easeInOut", duration: 3});
+
+            //fromTo: 0%와 100% 스타일을 스크립트에서 작성
+            //gsap.fromTo('선택자', {0%스타일}, {100%스타일, duration: 초});
+            //gsap.fromTo('#box', {top: '0px', width: '500px', backgroundColor: 'green'}, {top: '100px', width: '1000px', backgroundColor: 'red', ease: "power2.easeInOut", duration: 3});
+      });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">gsap (트윈맥스) 가 적용되어서 녹색->빨강, 가로 크기 2배, 상단에서 100픽셀 떨어지기</div>
+</body>
+</html>

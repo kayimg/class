@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>timeline으로 애니메이션을 연결</title>
+    <style>
+        body{margin: 0;padding: 0;}
+        #box{position: absolute; top: 100px; left: 100px; width: 600px; height: 300px; font-size: 30px; background: blue;color: #fff;}
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           //gsap.to('#box', {x: '300px', duration: 5}); 
+           gsap.to('#box', {x: 300, duration: 5}); 
+           gsap.to('#box', {y: 100, duration: 3, delay: 5}); 
+           gsap.to('#box', {opacity: 0, duration: 2, delay: 8}); 
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <p>1. 오른쪽으로 5초동안 300픽셀 수평 이동</p>
+        <p>2. 5초 지연후에 하단으로 3초동안 100픽셀 수직 이동</p>
+        <p>3. 8초 지연후에 불투명도 0으로 2초동안 사라짐</p>
+    </div>
+</body>
+</html>
