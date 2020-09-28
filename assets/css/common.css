@@ -51,6 +51,7 @@ body{font-family: HDhM, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, sans-
 .blind-b{position: absolute;}
 .borderbox{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 .font2{font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;}
+.font_white{color: #ffffff;}
 
 /* skip navigation */
 #skip a{position: absolute;top: 0;left: -9999px;z-index: 1000;}
@@ -126,3 +127,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8933', end
 }
 
 /* #footer */
+#footer{padding: 50px 80px;background: #000;color: #999999;}
+.link li{float: left;}
+.link li + li{position: relative;padding-left: 25px;}
+.link li + li::before{content: "";position: absolute;top: 0;left: 12px;width: 1px;height: 100%;background: #999999;}
+.foot_right{top: 0;right: 0;}
+.link li a:hover, .link li a:focus{color: #ffffff;text-decoration: underline;}
+
+.foot_right{top: 0;right: 0;}
+.family{font-size: 18px;color: #222222;}
+.family > a{float: left;height: 50px;}
+.family .btn_fopen{width: 220px;border: 1px solid #676767;padding-left: 15px;color: #ffffff;line-height: 48px;}
+.family .btn_fopen::before{content: "▼";position: absolute;right: 15px;top: 50%;transform: translateY(-50%);font-size: 12px;color: #666666;}
+.family ul{display: none; position: absolute;top: 50px;left: 0;width: 307px;background: #ffffff;border: 1px solid #676767;line-height: 35px;}
+.family ul li a{display: block;padding-left: 15px;}
+.family ul li a:hover, .family ul li a:focus{background: #0000ff;color: #ffffff;}
+.family .btn_go{width: 100px;background: #ffffff;text-align: center;line-height: 50px;}
+.sns{margin-top: 20px;}
+.sns li{float: left;margin-left: 25px;font-size: 24px;line-height: 42px;}
+.sns li .gradient:hover, .sns li .gradient:focus{background-image: linear-gradient(to right, #ff8933 0%, #ea2e2e 100%);color: transparent;-webkit-background-clip: text;background-clip: text;}
+.address{margin-top: 35px;width: 80%;}
+.address .company + .company{margin-top: 10px;}
+.address .company strong, .address .company div, .address .company div p{float: left;line-height: 24px;}
+.address .company strong{width: 200px;/* background: pink; */color: #ffffff;}
+.address .company:nth-of-type(3) strong{font-size: 14px;}
+/* 
+부모 .company:nth-child(3) : 부모안에 있는 모든 자식을 줄세워 앞에서 3번째가 .company인 선택자
+부모 .company:nth-of-type(3) : 부모안에 있는 .company라는 타입만을 줄세워서 3번째인 선택자
+*/
+.address .company div{width: calc(100% - 200px);/* background: aqua; */}
+.address .company div p{font-size: 14px;margin-right: 20px;}
+.copyright{padding-top: 14px;font-size: 14px;}
+.btn_top{right: -80px;bottom: -50px;width: 80px;height: 80px;background: #23272a;color: #ffffff;text-align: center;line-height: 80px;font-size: 14px;}
